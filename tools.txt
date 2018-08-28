@@ -1,0 +1,24 @@
+#MY CHEATSHEET!
+
+##Collection of simple but helpful command line commands that I always come accross
+
+
+#SSH KEY GENERATION:
+
+ssh-keygen -t rsa -b 4096 -C "For MongoDB use only, BJS - 08.27.2018" -m 'PEM'
+
+
+#DOCKER & DOCKER COMPOSE:
+
+##To get interactive terminal in running docker container
+sudo docker exec -it <container ID> /bin/bash
+
+##To get logs:
+sudo docker-compose logs -tail -follow
+
+
+#MISC
+
+##netcat how to send data around almost like a chat behind router.
+to listen for incoming: nc -l -p <port number> 
+to send / outgoing   :  nc <ip> <port>
