@@ -6,6 +6,7 @@
 #SSH KEY GENERATION:
 
 ssh-keygen -t rsa -b 4096 -C "For MongoDB use only, BJS - 08.27.2018" -m 'PEM'
+chmod 600 <keyname>
 
 
 #DOCKER & DOCKER COMPOSE:
@@ -22,3 +23,14 @@ sudo docker-compose logs -tail -follow
 ##netcat how to send data around almost like a chat behind router.
 to listen for incoming: nc -l -p <port number> 
 to send / outgoing   :  nc <ip> <port>
+
+
+
+#PYTHON HACKS:
+##Quick test to see if Parity node is up and running 
+import requests
+url = 'http://Parity-Cluster1-617979a740ef254d.elb.us-east-1.amazonaws.com:8545'
+rpc = {'method':'eth_blockNumber','id':0,'jsonrpc':'2.0'}
+rsp = requests.post(url,json=rpc)
+rsp.json()
+{'result': '0x5fc568', 'id': 0, 'jsonrpc': '2.0'}
